@@ -1,0 +1,18 @@
+1 - Spark Job to filter data and excute functions 
+
+Clean and Enrich Your Data (Listing Quality Improvement)
+
+Text Cleaning: Create functions to clean and normalize text fields (titles, descriptions, features). This can include lowercasing, removing punctuation, and stripping whitespace.
+Missing or Low-Quality Data Detection: Write functions that flag listings with missing critical fields (e.g. no images, very short descriptions, or few reviews).
+Image & Video Quality Check: (If available) Create a function that validates if image URLs point to high-resolution images.
+Metadata Validation: Verify that other fields (like price, rating, store) are within expected ranges.
+
+Auto-Completion for Listings (Avoiding Abandoned Products)
+
+Tokenization & N-Gram Generation: Use Spark’s ML feature transformers (such as Tokenizer and NGram) on your title and description fields to build a vocabulary that will support auto-completion suggestions.
+Language Model or Similarity Search: Build a simple auto-completion engine using word embeddings (with Word2Vec) or by scoring n-gram matches. This function will generate likely completions for a partially entered product title or description.
+UDF for Auto-Completion: You can wrap the above logic in a UDF that takes a partial string and returns candidate completions.
+
+Trust-Related Issues (Decreasing Customer Trust-Related Issues)
+
+Trust Score Calculation: Develop a function (or UDF) that computes a “trust score” using existing fields such as average_rating, rating_number, and perhaps even signals from reviews (if you can extract sentiment from descriptions or features)
