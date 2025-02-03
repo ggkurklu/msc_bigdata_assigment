@@ -1,0 +1,7 @@
+# Environment variables
+*.env
+
+# Sensitive keys
+*.pem
+*.jsonl
+*.txt
